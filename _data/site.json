@@ -1,0 +1,54 @@
+{
+ "name": "夜骑leon",
+ "site_title": "blog",
+ "title": "夜骑leon · 博客",
+ "tagline": "高二 · 台州 · INFP-T",
+ "hero_title": "夜骑leon 的博客",
+ "hero_sub": "记点东西：正在做的事、看到的情报、写下来的想法。想到就写，写完就发。",
+ "chips": [
+  {
+   "text": "高二 · 政史地"
+  },
+  {
+   "text": "INFP-T",
+   "color": "p"
+  },
+  {
+   "text": "台州 · 温岭",
+   "color": "m"
+  },
+  {
+   "text": "夜骑 · 摄影 · 中东局势"
+  }
+ ],
+ "avatar_text": "L",
+ "wechat": "yyg_1119",
+ "bio": "Too young too simple, sometimes naive.",
+ "qr": "assets/uploads/wechat-qr.png",
+ "links": [
+  {
+   "label": "GitHub",
+   "url": "https://github.com/cnyeqi-leon"
+  },
+  {
+   "label": "生日页",
+   "url": "https://cnyeqi-leon.github.io/birthday/"
+  },
+  {
+   "label": "生日会需求收集",
+   "url": "https://junshi-pc.tailf36923.ts.net:10000/"
+  },
+  {
+   "label": "猜歌网页版",
+   "url": "https://junshi-pc.tailf36923.ts.net:10000/guess/"
+  }
+ ],
+ "nav_extra": [
+  {
+   "label": "生日页",
+   "url": "https://cnyeqi-leon.github.io/birthday/"
+  }
+ ],
+ "about_md": "## 我\n\n姓俞，浙江台州，高二，选考**政治 · 历史 · 地理**。\n\n平时喜欢骑车夜跑（所以叫夜骑leon）、拍点东西、看中东那边的消息。话不多，但写下来能写很长。\n\n## 这个站\n\n一个自己写、自己发的博客。没有平台审核、没有推荐算法，想到什么写什么。\n\n文章里的东西大多是我在做的事：生日会筹备、课件、情报整理、还有一些乱七八糟的折腾记录。\n\n## 找我\n\n微信在右边二维码，加的时候说一句是谁。",
+ "footer": "自己搭的站 · 本地后台发布"
+}
