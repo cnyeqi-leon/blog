@@ -1,0 +1,20 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>集体生日会 · 开场动画</title>
+<style>
+html,body{margin:0;height:100%;background:#0b0d10;overflow:hidden}
+.video{position:fixed;inset:0;display:flex;align-items:center;justify-content:center}
+video{max-width:100%;max-height:100%;width:auto;height:auto}
+.tip{position:fixed;left:0;right:0;bottom:18px;text-align:center;color:#8a8f98;
+font:14px "PingFang SC","Microsoft YaHei",sans-serif;letter-spacing:.08em;opacity:0;transition:opacity .5s}
+.tip.on{opacity:1}
+a{color:#f5a524;text-decoration:none}
+</style></head><body>
+<div class="video"><video id="v" src="intro.mp4" autoplay muted playsinline preload="auto"></video></div>
+<div class="tip" id="tip">动画结束 · 回到 PPT 按 <b>→</b> 继续 &nbsp;|&nbsp; <a href="javascript:location.reload()">重播</a></div>
+<script>
+var v=document.getElementById('v'),tip=document.getElementById('tip');
+v.addEventListener('ended',function(){tip.classList.add('on')});
+v.addEventListener('error',function(){tip.textContent='视频加载失败，检查网络后刷新';tip.classList.add('on')});
+v.play&&v.play().catch(function(){});
+</script></body></html>
