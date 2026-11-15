@@ -3,18 +3,34 @@
 <title>集体生日会 · 开场动画</title>
 <style>
 html,body{margin:0;height:100%;background:#0b0d10;overflow:hidden}
-.video{position:fixed;inset:0;display:flex;align-items:center;justify-content:center}
+.stage{position:fixed;inset:0;display:flex;align-items:center;justify-content:center}
 video{max-width:100%;max-height:100%;width:auto;height:auto}
-.tip{position:fixed;left:0;right:0;bottom:18px;text-align:center;color:#8a8f98;
-font:14px "PingFang SC","Microsoft YaHei",sans-serif;letter-spacing:.08em;opacity:0;transition:opacity .5s}
+.tip{position:fixed;left:0;right:0;bottom:16px;text-align:center;color:#8a8f98;
+font:14px "PingFang SC","Microsoft YaHei",sans-serif;letter-spacing:.06em;opacity:0;transition:opacity .4s}
 .tip.on{opacity:1}
-a{color:#f5a524;text-decoration:none}
+a{color:#f5a524;text-decoration:none;margin:0 6px}
+.bar{position:fixed;top:0;left:0;right:0;padding:10px 14px;text-align:center;color:#6b7280;
+font:12.5px "PingFang SC","Microsoft YaHei",sans-serif;letter-spacing:.08em;background:linear-gradient(#0b0d10,rgba(11,13,16,0))}
 </style></head><body>
-<div class="video"><video id="v" src="intro.mp4" autoplay muted playsinline preload="auto"></video></div>
-<div class="tip" id="tip">动画结束 · 回到 PPT 按 <b>→</b> 继续 &nbsp;|&nbsp; <a href="javascript:location.reload()">重播</a></div>
+<div class="bar">开场动画 · 30 秒 · 带音效（声音可点右上角开启/关闭）</div>
+<div class="stage">
+  <video id="v" autoplay playsinline preload="auto" controls>
+    <source src="intro.mp4" type="video/mp4">
+    <source src="intro-720p.mp4" type="video/mp4">
+    你的浏览器不支持 HTML5 视频，请用 Chrome / 360极速浏览器 打开。
+  </video>
+</div>
+<div class="tip" id="tip">动画结束 · 回到 PPT 按 <b>→</b> 继续
+  <a href="javascript:void(0)" id="replay">重播</a>
+  <a href="intro-720p.mp4" download>下载 720p（老机器备用）</a>
+</div>
 <script>
-var v=document.getElementById('v'),tip=document.getElementById('tip');
+var v=document.getElementById('v'), tip=document.getElementById('tip');
+document.getElementById('replay').onclick=function(){v.currentTime=0;v.play();tip.classList.remove('on')};
 v.addEventListener('ended',function(){tip.classList.add('on')});
-v.addEventListener('error',function(){tip.textContent='视频加载失败，检查网络后刷新';tip.classList.add('on')});
+v.addEventListener('error',function(){
+  var s=document.createElement('source');s.src='intro-720p.mp4';s.type='video/mp4';
+  if(!v.querySelector('[data-fb]')){s.setAttribute('data-fb','1');v.appendChild(s);v.load();v.play();}
+});
 v.play&&v.play().catch(function(){});
 </script></body></html>
