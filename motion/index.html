@@ -2,35 +2,52 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>集体生日会 · 开场动画</title>
 <style>
-html,body{margin:0;height:100%;background:#0b0d10;overflow:hidden}
+html,body{margin:0;height:100%;background:#0b0d10;overflow:hidden;
+  font-family:"PingFang SC","Microsoft YaHei",system-ui,sans-serif}
 .stage{position:fixed;inset:0;display:flex;align-items:center;justify-content:center}
-video{max-width:100%;max-height:100%;width:auto;height:auto}
-.tip{position:fixed;left:0;right:0;bottom:16px;text-align:center;color:#8a8f98;
-font:14px "PingFang SC","Microsoft YaHei",sans-serif;letter-spacing:.06em;opacity:0;transition:opacity .4s}
+video{max-width:100%;max-height:100%;width:auto;height:auto;background:#000}
+#cover{position:fixed;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;
+  gap:18px;background:rgba(11,13,16,.92);cursor:pointer;z-index:9;transition:opacity .4s}
+#cover.hide{opacity:0;pointer-events:none}
+#cover .t{color:#fff9ec;font-size:26px;letter-spacing:.06em}
+#cover .s{color:#8a8f98;font-size:14px}
+#cover .btn{margin-top:6px;padding:14px 34px;border-radius:999px;background:#ffd84d;color:#1b1b1b;
+  font-size:18px;font-weight:700;border:0;cursor:pointer}
+.tip{position:fixed;left:0;right:0;bottom:14px;text-align:center;color:#8a8f98;font-size:13.5px;
+  letter-spacing:.06em;opacity:0;transition:opacity .4s;z-index:8}
 .tip.on{opacity:1}
 a{color:#f5a524;text-decoration:none;margin:0 6px}
-.bar{position:fixed;top:0;left:0;right:0;padding:10px 14px;text-align:center;color:#6b7280;
-font:12.5px "PingFang SC","Microsoft YaHei",sans-serif;letter-spacing:.08em;background:linear-gradient(#0b0d10,rgba(11,13,16,0))}
 </style></head><body>
-<div class="bar">开场动画 · 30 秒 · 带音效（声音可点右上角开启/关闭）</div>
 <div class="stage">
-  <video id="v" autoplay playsinline preload="auto" controls>
+  <video id="v" playsinline preload="auto" controls>
     <source src="intro.mp4" type="video/mp4">
     <source src="intro-720p.mp4" type="video/mp4">
-    你的浏览器不支持 HTML5 视频，请用 Chrome / 360极速浏览器 打开。
   </video>
 </div>
-<div class="tip" id="tip">动画结束 · 回到 PPT 按 <b>→</b> 继续
+<div id="cover">
+  <div class="t">集体生日会 · 开场动画</div>
+  <div class="s">30 秒 · 有音效 · 点一下开始（浏览器要你点一下才出声）</div>
+  <button class="btn" id="go">开始播放</button>
+  <div class="s">动画结束后按 <b>→</b> 回到 PPT</div>
+</div>
+<div class="tip" id="tip">动画结束&nbsp;
   <a href="javascript:void(0)" id="replay">重播</a>
   <a href="intro-720p.mp4" download>下载 720p（老机器备用）</a>
 </div>
 <script>
-var v=document.getElementById('v'), tip=document.getElementById('tip');
-document.getElementById('replay').onclick=function(){v.currentTime=0;v.play();tip.classList.remove('on')};
+var v=document.getElementById('v'), cover=document.getElementById('cover'), tip=document.getElementById('tip');
+function start(){cover.classList.add('hide');v.muted=false;v.volume=1;v.play().catch(function(){});}
+document.getElementById('go').onclick=start;
+cover.onclick=start;
+document.getElementById('replay').onclick=function(){tip.classList.remove('on');v.currentTime=0;v.play();};
 v.addEventListener('ended',function(){tip.classList.add('on')});
 v.addEventListener('error',function(){
-  var s=document.createElement('source');s.src='intro-720p.mp4';s.type='video/mp4';
-  if(!v.querySelector('[data-fb]')){s.setAttribute('data-fb','1');v.appendChild(s);v.load();v.play();}
+  if(!v.querySelector('[data-fb]')){
+    var s=document.createElement('source');s.src='intro-720p.mp4';s.type='video/mp4';s.setAttribute('data-fb','1');
+    v.appendChild(s);v.load();start();
+  }
 });
-v.play&&v.play().catch(function(){});
+document.addEventListener('keydown',function(e){
+  if(e.key===' '&&v.paused){e.preventDefault();start();}
+});
 </script></body></html>
