@@ -1,10 +1,36 @@
 {
  "site": {
-  "name": "夜骑leon",
-  "tagline": "高二 · 台州 · INFP-T"
+  "name": "夜航手记",
+  "tagline": "只放文字的一个角落"
  },
  "posts": [
   {
+   "id": "p-night-notes",
+   "slug": "night-notes",
+   "title": "夜里适合写东西",
+   "date": "2026-11-21",
+   "tags": [
+    "随笔",
+    "记录"
+   ],
+   "summary": "为什么把字留在这里，而不是发出去。",
+   "cover": "",
+   "url": "post/night-notes.html"
+  },
+  {
+   "id": "p-blank",
+   "slug": "blank-page",
+   "title": "留一页给以后",
+   "date": "2026-11-18",
+   "tags": [
+    "随笔"
+   ],
+   "summary": "先占个位置：有些话还没想好怎么写。",
+   "cover": "",
+   "url": "post/blank-page.html"
+  },
+  {
+   "id": "p-hello",
    "slug": "hello",
    "title": "从今天开始写",
    "date": "2026-11-14",
@@ -12,7 +38,8 @@
     "说明"
    ],
    "summary": "这个站是干嘛的：放我自己写的东西。",
-   "cover": ""
+   "cover": "",
+   "url": "post/hello.html"
   }
  ]
 }

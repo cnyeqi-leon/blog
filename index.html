@@ -1,46 +1,157 @@
 <!doctype html>
-<html lang="zh-CN"><head>
+<html lang="zh-CN" data-theme="light">
+<head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>夜骑leon · 博客</title>
-<meta name="description" content="Too young too simple, sometimes naive.">
-<meta name="theme-color" content="#fff9ec">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>夜航手记</title>
+<meta name="description" content="一个只放文字的静态博客：时间线式阅读，没有算法推荐，也不写私人信息。">
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" content="#ffffff" id="themeColor">
+<meta property="og:title" content="夜航手记">
+<meta property="og:description" content="一个只放文字的静态博客：时间线式阅读，没有算法推荐，也不写私人信息。">
+<meta property="og:type" content="website">
+<link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2064%2064'%3E%3Crect%20width='64'%20height='64'%20rx='16'%20fill='%230f1419'/%3E%3Cpath%20d='M41%2010a22%2022%200%201%200%2013%2031A18%2018%200%200%201%2041%2010z'%20fill='%231d9bf0'/%3E%3C/svg%3E">
 <link rel="stylesheet" href="assets/style.css">
-
-</head><body>
-<div class="wrap">
-<header class="top">
-  <div class="brand"><span class="dot"></span>夜骑leon · blog</div>
-  <nav><a href="index.html">文章</a><a href="about.html">关于</a><a href="https://cnyeqi-leon.github.io/birthday/">生日页</a></nav>
-</header>
-<section class="hero">
-  <h1><span class="hl">夜骑leon 的博客</span></h1>
-  <p>记点东西：正在做的事、看到的情报、写下来的想法。想到就写，写完就发。</p>
-  <div class="chips"><span class="chip ">高二 · 政史地</span><span class="chip p">INFP-T</span><span class="chip m">台州 · 温岭</span><span class="chip ">夜骑 · 摄影</span></div>
-</section>
-<div class="layout">
-  <div><a class="card post-card" href="post/hello.html">
-  <div class="meta"><span>2026-11-14</span><span class="tag">说明</span></div>
-  <h2>从今天开始写</h2>
-  <p>这个站是干嘛的：放我自己写的东西。</p>
-  
-</a></div>
-  <aside class="side"><div class="card">
-  <div class="me">
-    <div class="avatar">L</div>
-    <div><b>夜骑leon</b><span>高二 · 台州 · INFP-T</span></div>
+<script>(function(){try{var t=localStorage.getItem("theme");if(t==="dark"||(!t&&window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches)){document.documentElement.setAttribute("data-theme","dark");var m=document.getElementById("themeColor");if(m)m.setAttribute("content","#000000");}}catch(e){}})();</script>
+</head>
+<body>
+<header class="topbar">
+  <div class="topbar-inner">
+    
+    <a class="brand" href="index.html" aria-label="夜航手记 时间线">
+      <svg class="brand-mark" viewBox="0 0 32 32" aria-hidden="true"><defs><linearGradient id="bm" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#1d9bf0"/><stop offset="1" stop-color="#7856ff"/></linearGradient></defs><circle cx="16" cy="16" r="16" fill="url(#bm)"/><path d="M21.7 7.2a9.6 9.6 0 1 0 2.9 14.3A8.3 8.3 0 0 1 21.7 7.2z" fill="#fff"/></svg>
+      <span class="brand-name">夜航手记</span>
+    </a>
+    <div class="search" role="search">
+  <svg class="search-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M10.5 3a7.5 7.5 0 1 1-4.7 13.35l-3.32 3.32a1 1 0 1 1-1.42-1.42l3.32-3.32A7.5 7.5 0 0 1 10.5 3zm0 2a5.5 5.5 0 1 0 0 11 5.5 5.5 0 0 0 0-11z" fill="currentColor"/></svg>
+  <input id="q" type="search" placeholder="搜索帖子或标签" autocomplete="off" enterkeyhint="search" aria-label="搜索帖子">
+  <button class="qclear" id="qclear" type="button" aria-label="清空搜索" title="清空搜索" hidden><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg></button>
+</div>
+    <div class="topbar-actions">
+      <a class="ghost-link" href="about.html">关于</a>
+      <button class="icon-btn theme-btn" id="themeBtn" type="button" aria-label="切换深浅色" title="切换深浅色" aria-pressed="false">
+        <svg class="ic-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4.3" fill="none" stroke="currentColor" stroke-width="1.7"/><path d="M12 2.6v2.2M12 19.2v2.2M2.6 12h2.2M19.2 12h2.2M5.4 5.4l1.6 1.6M17 17l1.6 1.6M18.6 5.4 17 7M7 17l-1.6 1.6" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg>
+        <svg class="ic-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.4 14.2A8.6 8.6 0 0 1 9.8 3.6a8.6 8.6 0 1 0 10.6 10.6z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></svg>
+      </button>
+    </div>
   </div>
-  <h3>加我</h3>
-  <img class="qr" src="assets/uploads/wechat-qr.png" alt="微信二维码">
-  <div class="note">微信：yyg_1119</div>
-  <div class="note">Too young too simple, sometimes naive.</div>
-  <h3>链接</h3>
-  <div class="links"><a href="https://github.com/cnyeqi-leon">GitHub</a><a href="https://cnyeqi-leon.github.io/birthday/">生日页</a></div>
-</div></aside>
-</div>
-<footer>
-  <span>夜骑leon · 高二 · 台州 · INFP-T</span>
-  <span>自己搭的站 · 本地后台发布</span>
+</header>
+<div class="page">
+  <main class="timeline" id="main">
+    <div class="timeline-head">
+      <h1>时间线</h1>
+      <span class="count" id="count">共 3 条</span>
+    </div>
+    <div class="filter-bar" id="filterBar" hidden>
+      <span id="filterText">筛选</span>
+      <button class="filter-clear" id="clearFilter" type="button">清除筛选</button>
+    </div>
+    <div class="feed" id="feed">
+<article class="post-card" data-search="夜里适合写东西 为什么把字留在这里，而不是发出去。 2026-11-21 随笔 记录 夜里安静，写东西不用解释给谁听。 把字放在这里，不是为了被看见，只是想让它们有个地方待着。 一点想法 写得慢没关系，写完就好 不用追热点，热点会自己过去 留白也是一种内容 如果哪天你路过这里，随便看看就好。" data-date="2026-11-21">
+  <div class="avatar" style="--av-a:#7856ff;--av-b:#f91880;--av-r:234deg" aria-hidden="true"><span>夜</span></div>
+  <div class="pc-main">
+    <div class="pc-head">
+      <a class="pc-name" href="post/night-notes.html">夜航</a>
+      <span class="pc-handle">@yehang_notes</span>
+      <span class="pc-sep" aria-hidden="true">·</span>
+      <time class="pc-time" datetime="2026-11-21" title="2026年11月21日">11月21日</time>
+    </div>
+    <a class="pc-link" href="post/night-notes.html">
+      <h2 class="pc-title">夜里适合写东西</h2>
+      <p class="pc-text">为什么把字留在这里，而不是发出去。</p>
+      
+    </a>
+    <div class="pc-tags"><button class="tag" type="button" data-tag="随笔">#随笔</button><button class="tag" type="button" data-tag="记录">#记录</button></div>
+    <div class="pc-actions" role="group" aria-label="互动（仅展示）">
+      <button class="act act-reply" type="button" aria-label="回复（仅展示）" title="回复（仅展示）"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5c5.2 0 9.5 3.7 9.5 8.2 0 4.6-4.3 8.3-9.5 8.3-1.1 0-2.2-.1-3.2-.4L4 21.5l1.1-3.8C3.6 16.2 2.5 14.1 2.5 11.7c0-4.5 4.3-8.2 9.5-8.2z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></svg></button>
+      <button class="act act-repost" type="button" aria-label="转发（仅展示）" title="转发（仅展示）"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9.5h10.5a3 3 0 0 1 3 3V17" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/><path d="M14.5 5.5 18.5 9.5 14.5 13.5" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/><path d="M20 14.5H9.5a3 3 0 0 1-3-3V7" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/><path d="M9.5 18.5 5.5 14.5 9.5 10.5" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+      <button class="act act-like" type="button" aria-label="喜欢（仅展示）" title="喜欢（仅展示）" aria-pressed="false"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20.2 10.7 19C6.2 15 3 12.2 3 8.8 3 6.2 5.1 4 7.7 4c1.6 0 3.1.8 4.3 2.2C13.2 4.8 14.7 4 16.3 4 18.9 4 21 6.2 21 8.8c0 3.4-3.2 6.2-7.7 10.2L12 20.2z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></svg></button>
+      <button class="act act-share" type="button" aria-label="复制链接" title="复制链接" data-href="post/night-notes.html"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 15.5V4.5" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/><path d="M7.5 9 12 4.5 16.5 9" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/><path d="M5 13.5v4.5A2 2 0 0 0 7 20h10a2 2 0 0 0 2-2v-4.5" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg></button>
+    </div>
+  </div>
+</article>
+<article class="post-card" data-search="留一页给以后 先占个位置：有些话还没想好怎么写。 2026-11-18 随笔 这一页先空着。 有些东西还没想好怎么写，就先占个位置。等哪天夜里想到合适的句子，再回来补上。 不着急。写东西这件事，慢一点也没关系。 待写 一段关于「耐心」的笔记 一篇没有结论的观察 一次读书摘抄的整理" data-date="2026-11-18">
+  <div class="avatar" style="--av-a:#1d9bf0;--av-b:#7856ff;--av-r:188deg" aria-hidden="true"><span>夜</span></div>
+  <div class="pc-main">
+    <div class="pc-head">
+      <a class="pc-name" href="post/blank-page.html">夜航</a>
+      <span class="pc-handle">@yehang_notes</span>
+      <span class="pc-sep" aria-hidden="true">·</span>
+      <time class="pc-time" datetime="2026-11-18" title="2026年11月18日">11月18日</time>
+    </div>
+    <a class="pc-link" href="post/blank-page.html">
+      <h2 class="pc-title">留一页给以后</h2>
+      <p class="pc-text">先占个位置：有些话还没想好怎么写。</p>
+      
+    </a>
+    <div class="pc-tags"><button class="tag" type="button" data-tag="随笔">#随笔</button></div>
+    <div class="pc-actions" role="group" aria-label="互动（仅展示）">
+      <button class="act act-reply" type="button" aria-label="回复（仅展示）" title="回复（仅展示）"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5c5.2 0 9.5 3.7 9.5 8.2 0 4.6-4.3 8.3-9.5 8.3-1.1 0-2.2-.1-3.2-.4L4 21.5l1.1-3.8C3.6 16.2 2.5 14.1 2.5 11.7c0-4.5 4.3-8.2 9.5-8.2z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></svg></button>
+      <button class="act act-repost" type="button" aria-label="转发（仅展示）" title="转发（仅展示）"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9.5h10.5a3 3 0 0 1 3 3V17" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/><path d="M14.5 5.5 18.5 9.5 14.5 13.5" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/><path d="M20 14.5H9.5a3 3 0 0 1-3-3V7" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/><path d="M9.5 18.5 5.5 14.5 9.5 10.5" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+      <button class="act act-like" type="button" aria-label="喜欢（仅展示）" title="喜欢（仅展示）" aria-pressed="false"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20.2 10.7 19C6.2 15 3 12.2 3 8.8 3 6.2 5.1 4 7.7 4c1.6 0 3.1.8 4.3 2.2C13.2 4.8 14.7 4 16.3 4 18.9 4 21 6.2 21 8.8c0 3.4-3.2 6.2-7.7 10.2L12 20.2z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></svg></button>
+      <button class="act act-share" type="button" aria-label="复制链接" title="复制链接" data-href="post/blank-page.html"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 15.5V4.5" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/><path d="M7.5 9 12 4.5 16.5 9" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/><path d="M5 13.5v4.5A2 2 0 0 0 7 20h10a2 2 0 0 0 2-2v-4.5" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg></button>
+    </div>
+  </div>
+</article>
+<article class="post-card" data-search="从今天开始写 这个站是干嘛的：放我自己写的东西。 2026-11-14 说明 这个站放我自己写的东西：想到的、看到的、留在心里的。 不分长短，也不用凑字数——想写就写，写完就发。 会写什么 读到的一句值得记下的话 路上看到的一点东西 折腾事情时的记录 没有结论的思考 不会写什么 不抄、不搬运、不放别人的东西。私人信息一律不写进来。 这里没有评论区，也没有私信。看完就走，挺好。" data-date="2026-11-14">
+  <div class="avatar" style="--av-a:#1d9bf0;--av-b:#f5a524;--av-r:329deg" aria-hidden="true"><span>夜</span></div>
+  <div class="pc-main">
+    <div class="pc-head">
+      <a class="pc-name" href="post/hello.html">夜航</a>
+      <span class="pc-handle">@yehang_notes</span>
+      <span class="pc-sep" aria-hidden="true">·</span>
+      <time class="pc-time" datetime="2026-11-14" title="2026年11月14日">11月14日</time>
+    </div>
+    <a class="pc-link" href="post/hello.html">
+      <h2 class="pc-title">从今天开始写</h2>
+      <p class="pc-text">这个站是干嘛的：放我自己写的东西。</p>
+      
+    </a>
+    <div class="pc-tags"><button class="tag" type="button" data-tag="说明">#说明</button></div>
+    <div class="pc-actions" role="group" aria-label="互动（仅展示）">
+      <button class="act act-reply" type="button" aria-label="回复（仅展示）" title="回复（仅展示）"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5c5.2 0 9.5 3.7 9.5 8.2 0 4.6-4.3 8.3-9.5 8.3-1.1 0-2.2-.1-3.2-.4L4 21.5l1.1-3.8C3.6 16.2 2.5 14.1 2.5 11.7c0-4.5 4.3-8.2 9.5-8.2z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></svg></button>
+      <button class="act act-repost" type="button" aria-label="转发（仅展示）" title="转发（仅展示）"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9.5h10.5a3 3 0 0 1 3 3V17" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/><path d="M14.5 5.5 18.5 9.5 14.5 13.5" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/><path d="M20 14.5H9.5a3 3 0 0 1-3-3V7" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/><path d="M9.5 18.5 5.5 14.5 9.5 10.5" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+      <button class="act act-like" type="button" aria-label="喜欢（仅展示）" title="喜欢（仅展示）" aria-pressed="false"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20.2 10.7 19C6.2 15 3 12.2 3 8.8 3 6.2 5.1 4 7.7 4c1.6 0 3.1.8 4.3 2.2C13.2 4.8 14.7 4 16.3 4 18.9 4 21 6.2 21 8.8c0 3.4-3.2 6.2-7.7 10.2L12 20.2z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></svg></button>
+      <button class="act act-share" type="button" aria-label="复制链接" title="复制链接" data-href="post/hello.html"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 15.5V4.5" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/><path d="M7.5 9 12 4.5 16.5 9" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/><path d="M5 13.5v4.5A2 2 0 0 0 7 20h10a2 2 0 0 0 2-2v-4.5" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg></button>
+    </div>
+  </div>
+</article>
+    </div>
+    <div class="empty" id="empty" hidden>
+      <span class="empty-ico" aria-hidden="true">✦</span>
+      <span id="emptyText">没有找到匹配的帖子。</span>
+    </div>
+    <p class="feed-end">— 到底了 —</p>
+    <footer class="site-foot">
+  <nav><a href="index.html">时间线</a><a href="about.html">关于</a></nav>
+  <p>自己写的字，自己搭的站。</p>
+  <p class="foot-fine">没有追踪、没有广告、没有后台统计。</p>
 </footer>
+  </main>
+  <aside class="sidebar" aria-label="站点侧栏">
+  <section class="side-card profile-card">
+    <div class="profile-banner" aria-hidden="true"></div>
+    <div class="profile-body">
+      <div class="avatar avatar-xl" style="--av-a:#7856ff;--av-b:#f91880;--av-r:176deg" aria-hidden="true"><span>夜</span></div>
+      <h2 class="p-name">夜航手记</h2>
+      <div class="p-handle">@yehang_notes</div>
+      <p class="p-bio">一个只放文字的角落。没有算法，没有热点，想到什么写什么。</p>
+      <div class="p-stats"><span><b>3</b> 帖子</span><span><b>3</b> 标签</span></div>
+      <a class="side-link" href="about.html">关于这个站 →</a>
+    </div>
+  </section>
+  <section class="side-card">
+    <h2>标签</h2>
+    <div class="tagcloud"><button class="tag-chip" type="button" data-side-tag="随笔">#随笔<span class="n">2</span></button><button class="tag-chip" type="button" data-side-tag="记录">#记录<span class="n">1</span></button><button class="tag-chip" type="button" data-side-tag="说明">#说明<span class="n">1</span></button></div>
+  </section>
+  <section class="side-card">
+    <h2>归档</h2>
+    <ul class="archive"><li><button type="button" data-side-month="2026-11"><span>2026年11月</span><span class="n">3</span></button></li></ul>
+  </section>
+  <p class="side-foot">没有追踪、没有广告、没有后台统计。</p>
+</aside>
 </div>
-</body></html>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+<script src="assets/app.js" defer></script>
+</body>
+</html>

@@ -1,46 +1,95 @@
 <!doctype html>
-<html lang="zh-CN"><head>
+<html lang="zh-CN" data-theme="light">
+<head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>关于 · 夜骑leon</title>
-<meta name="description" content="Too young too simple, sometimes naive.">
-<meta name="theme-color" content="#fff9ec">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>关于 · 夜航手记</title>
+<meta name="description" content="一个只放文字的静态博客：时间线式阅读，没有算法推荐，也不写私人信息。">
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" content="#ffffff" id="themeColor">
+<meta property="og:title" content="关于 · 夜航手记">
+<meta property="og:description" content="一个只放文字的静态博客：时间线式阅读，没有算法推荐，也不写私人信息。">
+<meta property="og:type" content="website">
+<link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2064%2064'%3E%3Crect%20width='64'%20height='64'%20rx='16'%20fill='%230f1419'/%3E%3Cpath%20d='M41%2010a22%2022%200%201%200%2013%2031A18%2018%200%200%201%2041%2010z'%20fill='%231d9bf0'/%3E%3C/svg%3E">
 <link rel="stylesheet" href="assets/style.css">
-
-</head><body>
-<div class="wrap">
-<header class="top">
-  <div class="brand"><span class="dot"></span>夜骑leon · blog</div>
-  <nav><a href="index.html">文章</a><a href="about.html">关于</a><a href="https://cnyeqi-leon.github.io/birthday/">生日页</a></nav>
+<script>(function(){try{var t=localStorage.getItem("theme");if(t==="dark"||(!t&&window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches)){document.documentElement.setAttribute("data-theme","dark");var m=document.getElementById("themeColor");if(m)m.setAttribute("content","#000000");}}catch(e){}})();</script>
+</head>
+<body>
+<header class="topbar">
+  <div class="topbar-inner">
+    <a class="icon-btn back-btn" href="index.html" aria-label="返回时间线" title="返回时间线"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 12H5M11 6l-6 6 6 6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+    <a class="brand" href="index.html" aria-label="夜航手记 时间线">
+      <svg class="brand-mark" viewBox="0 0 32 32" aria-hidden="true"><defs><linearGradient id="bm" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#1d9bf0"/><stop offset="1" stop-color="#7856ff"/></linearGradient></defs><circle cx="16" cy="16" r="16" fill="url(#bm)"/><path d="M21.7 7.2a9.6 9.6 0 1 0 2.9 14.3A8.3 8.3 0 0 1 21.7 7.2z" fill="#fff"/></svg>
+      <span class="brand-name">夜航手记</span>
+    </a>
+    <div class="topbar-spacer"></div>
+    <div class="topbar-actions">
+      <a class="ghost-link" href="about.html">关于</a>
+      <button class="icon-btn theme-btn" id="themeBtn" type="button" aria-label="切换深浅色" title="切换深浅色" aria-pressed="false">
+        <svg class="ic-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4.3" fill="none" stroke="currentColor" stroke-width="1.7"/><path d="M12 2.6v2.2M12 19.2v2.2M2.6 12h2.2M19.2 12h2.2M5.4 5.4l1.6 1.6M17 17l1.6 1.6M18.6 5.4 17 7M7 17l-1.6 1.6" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg>
+        <svg class="ic-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.4 14.2A8.6 8.6 0 0 1 9.8 3.6a8.6 8.6 0 1 0 10.6 10.6z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></svg>
+      </button>
+    </div>
+  </div>
 </header>
-<section class="hero"><h1><span class="hl">关于我</span></h1></section>
-<div class="layout">
-  <div class="card" style="padding:26px 28px">
-    <div class="body"><h2><span class="mk">我</span></h2>
-<p>姓俞，浙江台州，高二，选考<strong>政治 · 历史 · 地理</strong>。</p>
-<p>平时骑车夜跑（所以叫夜骑leon）、拍点东西、偶尔写点长文。话不多，但写下来能写很长。</p>
-<h2><span class="mk">这个站</span></h2>
-<p>自己写、自己发。没有平台审核、没有推荐算法，想到什么写什么。</p>
-<h2><span class="mk">找我</span></h2>
-<p>微信在右边二维码，加的时候说一句是谁。</p>
+<div class="page">
+  <main class="about" id="main">
+    <article class="about-card">
+      <div class="about-banner" aria-hidden="true"></div>
+      <div class="about-body">
+        <div class="avatar avatar-xl" style="--av-a:#7856ff;--av-b:#f91880;--av-r:176deg" aria-hidden="true"><span>夜</span></div>
+        <h1 class="about-name">夜航手记</h1>
+        <div class="about-handle">@yehang_notes</div>
+        <p class="about-bio">一个只放文字的角落。没有算法，没有热点，想到什么写什么。</p>
+        <div class="about-meta"><span>3 篇帖子</span><span>自 2026 年开始写</span><span>纯静态 · 无追踪</span></div>
+        <div class="body about-md"><h2>关于这个站</h2>
+<p>这是一个只放文字的角落。没有算法推荐，没有时间线焦虑；写下来，就放在这里。</p>
+<h2>会写什么</h2>
+<ul>
+<li>读到的一句值得记下的话</li>
+<li>一段路过的观察</li>
+<li>折腾东西时的记录</li>
+</ul>
+<h2>不会写什么</h2>
+<p>真实姓名、学校、住址、联系方式，一概不写。这里只有文字。</p>
+<h2>关于我</h2>
+<p>一个喜欢在夜里写字的人。仅此而已。</p>
+<h2>联系</h2>
+<p>没有联系方式。这里只是一个写字的地方。</p>
 </div>
-  </div>
-  <aside class="side"><div class="card">
-  <div class="me">
-    <div class="avatar">L</div>
-    <div><b>夜骑leon</b><span>高二 · 台州 · INFP-T</span></div>
-  </div>
-  <h3>加我</h3>
-  <img class="qr" src="assets/uploads/wechat-qr.png" alt="微信二维码">
-  <div class="note">微信：yyg_1119</div>
-  <div class="note">Too young too simple, sometimes naive.</div>
-  <h3>链接</h3>
-  <div class="links"><a href="https://github.com/cnyeqi-leon">GitHub</a><a href="https://cnyeqi-leon.github.io/birthday/">生日页</a></div>
-</div></aside>
-</div>
-<footer>
-  <span>夜骑leon · 高二 · 台州 · INFP-T</span>
-  <span>自己搭的站 · 本地后台发布</span>
+        <a class="back-home" href="index.html">← 返回时间线</a>
+      </div>
+    </article>
+    <footer class="site-foot">
+  <nav><a href="index.html">时间线</a><a href="about.html">关于</a></nav>
+  <p>自己写的字，自己搭的站。</p>
+  <p class="foot-fine">没有追踪、没有广告、没有后台统计。</p>
 </footer>
+  </main>
+  <aside class="sidebar" aria-label="站点侧栏">
+  <section class="side-card profile-card">
+    <div class="profile-banner" aria-hidden="true"></div>
+    <div class="profile-body">
+      <div class="avatar avatar-xl" style="--av-a:#7856ff;--av-b:#f91880;--av-r:176deg" aria-hidden="true"><span>夜</span></div>
+      <h2 class="p-name">夜航手记</h2>
+      <div class="p-handle">@yehang_notes</div>
+      <p class="p-bio">一个只放文字的角落。没有算法，没有热点，想到什么写什么。</p>
+      <div class="p-stats"><span><b>3</b> 帖子</span><span><b>3</b> 标签</span></div>
+      <a class="side-link" href="about.html">关于这个站 →</a>
+    </div>
+  </section>
+  <section class="side-card">
+    <h2>标签</h2>
+    <div class="tagcloud"><a class="tag-chip" href="index.html?tag=%E9%9A%8F%E7%AC%94">#随笔<span class="n">2</span></a><a class="tag-chip" href="index.html?tag=%E8%AE%B0%E5%BD%95">#记录<span class="n">1</span></a><a class="tag-chip" href="index.html?tag=%E8%AF%B4%E6%98%8E">#说明<span class="n">1</span></a></div>
+  </section>
+  <section class="side-card">
+    <h2>归档</h2>
+    <ul class="archive"><li><a href="index.html?month=2026-11"><span>2026年11月</span><span class="n">3</span></a></li></ul>
+  </section>
+  <p class="side-foot">没有追踪、没有广告、没有后台统计。</p>
+</aside>
 </div>
-</body></html>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+<script src="assets/app.js" defer></script>
+</body>
+</html>
